@@ -1,0 +1,27 @@
+#
+# Template file managed by Fabtools
+#
+
+<VirtualHost *:%(port)d>
+    ServerAdmin webmaster@%(server_name)s
+
+    DocumentRoot %(document_root)s
+
+    ServerName %(server_name)s
+
+    ErrorLog ${APACHE_LOG_DIR}/%(server_name)s-error_log
+    CustomLog ${APACHE_LOG_DIR}/%(server_name)s-access_log common
+
+    <Directory %(document_root)s>
+        <IfModule mod_rewrite.c>
+            Options +FollowSymLinks
+        </IfModule>
+
+        DirectoryIndex index.php
+        AllowOverride All
+
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+</VirtualHost>
