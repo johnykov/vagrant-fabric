@@ -1,6 +1,3 @@
-vagrant-fabric - LAMP
-=====================
-
 # A LAMP Vagrant Box
 
 This is a Vagrant configuration for a LAMP (linux, apache, mysql, php) box with essential tools.
@@ -28,5 +25,4 @@ The next steps are obviously to provision it with Fabric, then log in:
     vagrant ssh
 
 
-This are modified files from
-http://www.k3z.fr/blog/post/3/Developpement_Vagrant_debian_fabric_trio_gagnant
+This are modified files from [here](http://www.k3z.fr/blog/post/3/Developpement_Vagrant_debian_fabric_trio_gagnant)
