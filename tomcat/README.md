@@ -1,58 +1,17 @@
-# A Java Tomcat Vagrant Box
+# A Apache Tomcat Vagrant Box
 
-This is a Vagrant configuration for a Java Tomcat 7 box with essential tools.
-The operating system is a UUbuntu 12.04 precise `64` image.
+### Tomcat support
 
-## Requirements
-
-Obviously... [Vagrant](http://www.vagrantup.com/) and [Oracle VirtualBox](https://www.virtualbox.org/).
-
-You will need the awesome [Fabric](http://fabfile.org) and 
-[Fabtools](http://fabtools.readthedocs.org) to provision the box:
-
-    pip install fabric
-    pip install fabtools
-
-## Running the box
-
-You can start the box using the usual Vagrant `up` command:
-
-    vagrant up
-
-The next steps are obviously to provision it with Fabric, then log in:
+The box can be provisioned with [Tomcat](http://tomcat.apache.org/):
 
     fab vagrant provision
-    vagrant ssh
 
-### Glassfish support
+Tomcat is installed in `/usr/share/tomcat` with the following configuration:
 
-The box can be provisioned with [Glassfish](http://glassfish.org/):
+- access to the HTTP interface from the host on port `8080`
 
-    fab vagrant provision_glassfish
+## App deployment on tomcat
+  
+You can deploy a sample app to your new tomcat instance
 
-Glassfish is installed in `~/glassfish3` with the following configuration:
-
-- admin user: `admin`
-- admin password: `adminadmin`
-- access to the HTTP interface from the host on port `18080`
-- access to the HTTP admin console from the host on port `14848`
-
-## License
-
-Copyright (C) 2013 Julien Ponge.
-
-Files and code are being made available under the terms of the following license agreement.
-
-               DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                       Version 2, December 2004
-
-    Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
-
-    Everyone is permitted to copy and distribute verbatim or modified
-    copies of this license document, and changing it is allowed as long
-    as the name is changed.
-
-               DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-      TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-     0. You just DO WHAT THE FUCK YOU WANT TO.
+    fab vagrant deploySample
